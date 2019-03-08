@@ -15,7 +15,21 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
-    <finalName>JenkinsWar</finalName>
-  </build>
+
+    <build>
+        <finalName>JenkinsWar</finalName>
+
+        <plugins>
+            <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>tomcat-maven-plugin</artifactId>
+            <configuration>
+                <url>http://localhost:8081/manager</url>
+                <server>mytomcat</server>
+                <path>/JenkinsWar</path>
+            </configuration>
+    </plugin>
+    </plugins>
+
+    </build>
 </project>
